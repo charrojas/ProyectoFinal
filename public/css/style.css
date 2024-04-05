@@ -1,0 +1,99 @@
+#imgfon {
+    backdrop-filter: blur(5px);
+}
+
+.contenedor .btn {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: rgba(6, 137, 224, 0.74); /* Fondo semi-transparente en color celeste */
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    /* font-family: "Roboto", sans-serif; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+  
+  .contenedor .btn span {
+    margin-top: 10px;
+  }
+  
+  .contenedor .btn:hover {
+    background-color: rgba(19, 160, 19, 0.7); /* Fondo semi-transparente más claro al pasar el cursor */
+  }
+
+
+  /* Estilos para la ventana emergente */
+  #templatemo_search .modal-content {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+  }
+
+  #templatemo_search .modal-body {
+      padding: 20px;
+  }
+
+  #templatemo_search .input-group {
+      margin-bottom: 0;
+  }
+
+  #templatemo_search .form-control {
+      border-radius: 10px;
+  }
+
+  #templatemo_search .input-group-text {
+      background-color: #28a745;
+      border-color: #28a745;
+      border-radius: 10px;
+  }
+
+  #templatemo_search .input-group-text:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+  }
+
+  /* Estilos para la ventana emergente personalizada */
+  .popup-window {
+      width: 500px;
+      height: 400px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 0 auto;
+  }
+
+  .popup-window h2 {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  .popup-window form label {
+      display: block;
+      margin-bottom: 5px;
+  }
+
+  .popup-window form input,
+  .popup-window form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .popup-window form button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
