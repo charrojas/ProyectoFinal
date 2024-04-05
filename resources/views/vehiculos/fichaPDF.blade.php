@@ -1,85 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ficha del Vehículo</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .vehiculo-info {
+            margin-top: 20px;
+        }
+        .vehiculo-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .vehiculo-info table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .imagen-vehiculo {
+            max-width: 100%;
+            display: block;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ficha del Vehículo - CRAutos.com</h1>
+        <hr>
 
 
-<div class="col-lg-7 mt-5">
-    <div class="card">
-        <div class="card-body ml-5">
-            <h1 class="h2" style="text-align: left; margin-left: 5%; margin-top: 2%">Marca:
-                {{ $vehiculo->marca->nombre }}</h1>
-            <p class="h3 py-2" style="text-align: left; margin-left: 5%">Precio: {{ $vehiculo->precio }}
-            </p>
+        @foreach($imagenes as $imagen)
+            <img src="{{ public_path($imagen->imagen_url) }}" alt="Imagen del vehículo" style="width: 200px; height: 200px; object-fit: cover; margin-top: 100px;">
+        @endforeach
 
-            <ul class="list-inline" style="text-align: left; margin-left: 5%">
-                <li class="">
-                    <p><strong>Dueño:</strong> dueno</p>
-                </li>
-                <li class="">
-                    <p><strong>Modelo:</strong> {{ $vehiculo->modelo }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Año:</strong> {{ $vehiculo->año }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Estilo:</strong> {{ $vehiculo->estilo->nombre }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Transmision:</strong> {{ $vehiculo->transmision }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Cilindraje:</strong> {{ $vehiculo->cilindraje }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Combustible:</strong> {{ $vehiculo->combustible }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Cantidad Puertas:</strong> {{ $vehiculo->cantidad_puertas }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Color Exterior:</strong> {{ $vehiculo->colorExterior->nombre }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Color Interior:</strong> {{ $vehiculo->colorInterior->nombre }}</p>
-                </li>
-                <li class="">
-                    <p><strong>Recibe:</strong> {{ $vehiculo->recibe }}</p>
-                </li>
+        <hr>
+
+        <div class="vehiculo-info">
+            <h2>Marca: {{ $vehiculo->marca->nombre }}</h2>
+            <p>Precio: {{ $vehiculo->precio }}</p>
+
+            <ul>
+                <li><strong>Dueño:</strong> {{$vehiculo->usuario->name}}</li>
+                <li><strong>Modelo:</strong> {{ $vehiculo->modelo }}</li>
+                <li><strong>Año:</strong> {{ $vehiculo->año }}</li>
+                <li><strong>Estilo:</strong> {{ $vehiculo->estilo->nombre }}</li>
+                <li><strong>Transmisión:</strong> {{ $vehiculo->transmision }}</li>
+                <li><strong>Cilindraje:</strong> {{ $vehiculo->cilindraje }}</li>
+                <li><strong>Combustible:</strong> {{ $vehiculo->combustible }}</li>
+                <li><strong>Cantidad de Puertas:</strong> {{ $vehiculo->cantidad_puertas }}</li>
+                <li><strong>Color Exterior:</strong> {{ $vehiculo->colorExterior->nombre }}</li>
+                <li><strong>Color Interior:</strong> {{ $vehiculo->colorInterior->nombre }}</li>
+                <li><strong>Recibe:</strong> {{ $vehiculo->recibe }}</li>
             </ul>
-
-
-            <form action="" method="GET">
-                <div class="row pb-3">
-                    <div class="col-12">
-                        <a href="#" class="btn btn-primary btn-sm rounded-pill float-start">
-                            <i class="fab fa-facebook-f mx-2 fa-fw"></i>
-                        </a>
-                        <a href="#" class="btn btn-info btn-sm rounded-pill float-start">
-                            <i class="fab fa-twitter mx-2 fa-fw text-white"></i>
-                        </a>
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill float-start">
-                            <i class="fab fa-google-plus-g mx-2 fa-fw"></i>
-                        </a>
-
-                        <a href="https://api.whatsapp.com/send?phone=62287717&text=Hola,%20quiero%20hacer%20una%20consulta"
-                            target="_blank">
-                            <button
-                                class="btn btn-success fab fa-whatsapp text-white float-end mx-1 contacto rounded-pill"
-                                name="submit" value="whatsapp">
-                                <!-- Agrega el icono de WhatsApp aquí si es necesario -->
-                                Enviar mensaje por WhatsApp
-                            </button>
-                        </a>
-                        <button type="submit"
-                            class="btn btn-success far fa-envelope text-white float-end mx-1 contacto rounded-pill"
-                            name="submit" value="gmail"></button>
-
-                        <a href="#" class="btn btn-danger btn-sm rounded-pill"
-                            style="position: absolute; top: 10px; right: 15px; margin-top: 2%">
-                            <i class="fa-solid fa-file-pdf" style="color: #ffffff;"></i>
-                            <span style="margin-left: 5px;">Descargar ficha del vehículo.</span>
-                        </a>
-                    </div>
-                </div>
-            </form>
-
         </div>
     </div>
-</div>
+</body>
+</html>

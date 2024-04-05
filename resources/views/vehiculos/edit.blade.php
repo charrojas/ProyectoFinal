@@ -14,13 +14,13 @@
     @method('PUT')
     <div class="container px-3 py-3">
         <div class="row">
-            <h2 class="text-center">Registra tu vehiculo</h2>
+            <h2 class="text-center" style="font-family: 'Roboto', sans-serif; color: #59ab6e">Edita tu vehículo.</h2>
         </div>
 
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group mb-3 mt-3">
-                    <label for="marca">Marca: {{ $vehiculo->marca->nombre }}</label>
+                    <label for="marca">Marca</label>
                     <select class="form-control shadow" name="marca">
                         @foreach ($marcas as $marca)
                             <option class="text-center" value="{{ $marca->id_marca }}">{{ $marca->nombre }}</option>
@@ -29,12 +29,12 @@
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="modelo">Modelo: {{$vehiculo->modelo}}</label>
-                    <input type="text" class="form-control shadow" id="modelo" placeholder="Ingrese el modelo" name="modelo">
+                    <label for="modelo">Modelo</label>
+                    <input type="text" class="form-control shadow" id="modelo" value="{{$vehiculo->modelo}}" name="modelo">
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="estilo">Estilo: {{$vehiculo->estilo->nombre}}</label>
+                    <label for="estilo">Estilo</label>
                     <select class="form-control shadow" name="estilo">
                         @foreach ($estilos as $estilo)
                             <option class="text-center" value="{{ $estilo->id_estilo }}">{{ $estilo->nombre }}</option>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="color_exterior">Color Exterior: {{ $vehiculo->colorExterior->nombre }}</label>
+                    <label for="color_exterior">Color Exterior</label>
                     <select class="form-control shadow" name="color_exterior">
                         @foreach ($color_exterior as $color_e)
                             <option class="text-center" value="{{ $color_e->id_color_exterior }}">{{ $color_e->nombre }}</option>
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="color_interior">Color Interior: {{ $vehiculo->colorInterior->nombre }}</label>
+                    <label for="color_interior">Color Interior</label>
                     <select class="form-control shadow" name="color_interior">
                         @foreach ($color_interior as $color_i)
                             <option class="text-center" value="{{ $color_i->id_color_interior }}">{{ $color_i->nombre }}</option>
@@ -61,20 +61,20 @@
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="transmision">Transmisión {{$vehiculo->transmision}}</label>
-                    <input type="text" class="form-control shadow" id="transmision" placeholder="Ingrese la transmisión" name="transmision">
+                    <label for="transmision">Transmisión</label>
+                    <input type="text" class="form-control shadow" id="transmision" value="{{$vehiculo->transmision}}" name="transmision">
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="cilindraje">Cilindraje: {{$vehiculo->cilindraje}}</label>
-                    <input type="number" class="form-control shadow" id="cilindraje" placeholder="Ingrese el cilindraje" name="cilindraje">
+                    <label for="cilindraje">Cilindraje</label>
+                    <input type="number" class="form-control shadow" id="cilindraje" value="{{$vehiculo->cilindraje}}" name="cilindraje">
                 </div>
             </div>
 
             <div class="col-sm-6">
                 <div class="form-group mb-3 mt-3">
-                    <label for="combustible">Combustible {{$vehiculo->combustible}}</label>
-                    <input type="text" class="form-control shadow" name="combustible" placeholder="Ingrese el tipo de combustible">
+                    <label for="combustible">Combustible</label>
+                    <input type="text" class="form-control shadow" name="combustible" value="{{$vehiculo->combustible}}">
                 </div>
 
                 <div class="form-group mb-3 mt-3">
@@ -86,18 +86,18 @@
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="cantidad_puertas">Cantidad de Puertas: {{$vehiculo->cantidad_puertas}}</label>
-                    <input type="text" class="form-control shadow" id="cantidad_puertas" placeholder="Ingrese el numero de puertas" name="cantidad_puertas">
+                    <label for="cantidad_puertas">Cantidad de Puertas</label>
+                    <input type="text" class="form-control shadow" id="cantidad_puertas" value="{{$vehiculo->cantidad_puertas}}" name="cantidad_puertas">
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="anio">Año: {{$vehiculo->año}}</label>
-                    <input type="text" class="form-control shadow" id="anio" placeholder="Ingrese el año del vehiculo" name="año">
+                    <label for="anio">Año</label>
+                    <input type="text" class="form-control shadow" id="anio" value="{{$vehiculo->año}}" name="año">
                 </div>
 
                 <div class="form-group mb-3 mt-3">
-                    <label for="precio">Precio: {{$vehiculo->precio}}</label>
-                    <input type="text" class="form-control shadow" id="precio" placeholder="Ingrese el precio del vehiculo" name="precio">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control shadow" id="precio" value="{{$vehiculo->precio}}" name="precio">
                 </div>
             </div>
         </div>
