@@ -26,8 +26,6 @@
                                 <div class="card-body p-4">
                                     <h6>Editar perfil</h6>
 
-
-                                    <!-- <p>{{ $perfil->id }}</p> -->
                                     <hr class="mt-0 mb-4">
                                     <div class="row pt-1">
                                         <div class="col-6 mb-3">

@@ -30,10 +30,8 @@ class ControllerImagenes extends Controller
     {
 
         if (auth()->check()) {
-            // El usuario está autenticado, permite el acceso a la página de creación
             return view('vehiculos.create');
         } else {
-            // El usuario no está autenticado, redirige a otra página
             return redirect()->route('login')->with('error', 'Debes iniciar sesión para acceder a esta página.');
         }
     }
@@ -66,9 +64,6 @@ class ControllerImagenes extends Controller
 
         $imagenesActualizadas = Imagen::where('id_vehiculo', $request->input('id_vehiculo'))->get();
 
-        // return redirect()->route('vehiculos.edit', ['vehiculo' => $request->input('id_vehiculo')])
-        //     ->with('success', 'Imágenes cargadas exitosamente.')
-        //     ->with('imagenes', $imagenesActualizadas);
         return back();
     }
 
@@ -93,13 +88,9 @@ class ControllerImagenes extends Controller
      */
     public function edit($id)
     {
-        // Obtener el vehículo y sus imágenes asociadas
         $vehiculo = Vehiculo::findOrFail($id);
         $imagenes = Imagen::where('id_vehiculo', $id)->get();
 
-        // Resto del código...
-
-        // Pasar el vehículo y las imágenes a la vista
         return view('vehiculos.edit', compact('vehiculo', 'imagenes'));
     }
 
@@ -125,13 +116,9 @@ class ControllerImagenes extends Controller
     public function destroy($id)
     {
         $imagen = Imagen::find($id);
-
-        // Obtener la ruta de la imagen
         $rutaImagen = public_path($imagen->imagen_url);
 
-        // Verificar si el archivo existe antes de eliminarlo
         if (file_exists($rutaImagen)) {
-            // Eliminar la imagen del directorio
             unlink($rutaImagen);
         }
 

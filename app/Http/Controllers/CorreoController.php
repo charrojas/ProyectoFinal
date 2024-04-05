@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactFormMail;
+use App\Mail\CorreoComprador;
+use App\Mail\CorreoVendedor;
 use App\Mail\EnviarCorreoPropietario;
-use App\Models\Imagen;
+use App\Models\User;
 use App\Models\Vehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +17,6 @@ class CorreoController extends Controller
 
     public function enviarCorreo(Request $request)
     {
-
         $data = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
@@ -25,8 +26,12 @@ class CorreoController extends Controller
 
         $correoRemitente = $request->input('email');
 
-        Mail::mailer('second')->to('charrojas2000@gmail.com')->send(new ContactFormMail($data, $correoRemitente));
+        Mail::mailer('second')->to('char@ucr-ays.net')->send(new ContactFormMail($data, $correoRemitente));
+        
+        return redirect()->back()->with('success', 'El correo ha sido enviado');
     }
+
+
 
     public function mostrarEnviarCorreo($id)
     {
@@ -65,4 +70,5 @@ class CorreoController extends Controller
 
         return redirect()->back()->with('success', 'El correo ha sido enviado al propietario del vehículo');
     }
+    
 }

@@ -7,12 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ControllerLogin extends Controller
 {
-    // public function index()
-    // {
-    //     return view('login.login');
-    // }
-
-    /**
+     /**
      * Create a new controller instance.
      *
      * @return void
@@ -31,12 +26,6 @@ class ControllerLogin extends Controller
     {
         return view('/home');
     }
-
-    // public function login2()
-    // {
-    //     return view('login.login2');
-    // }
-
 
     public function logout(Request $request)
     {

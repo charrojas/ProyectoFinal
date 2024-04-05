@@ -22,6 +22,13 @@ class ControllerPerfil extends Controller
         return view('usuario.perfil', compact('perfil'));
     }
 
+
+    public function micrautos()
+    {       
+        return view('usuario.miCRautos');
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -82,13 +89,12 @@ class ControllerPerfil extends Controller
         $perfil->telefono = $request->input('telefono');
         $perfil->direccion = $request->input('direccion');
        
-
         $perfil->save();
 
-        return redirect()->back();
-
-        // echo $perfil;
+        return view('usuario.perfil', compact('perfil'));
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -102,35 +108,4 @@ class ControllerPerfil extends Controller
     
         return redirect()->route('paginas.index');
     }
-
-    public function editP(string $id)
-    {
-        $perfil = User::findOrFail($id);
-
-        return view('usuario.edit', compact('perfil'));
-    }
-
-    
-    public function updateP(Request $request, $id)
-    {
-        $perfil = User::find($id);
-
-        $request->validate([
-            'name' => 'required',
-            'telefono' => 'required',
-            'direccion' => 'required',
-        ]);
-
-        $perfil->name = $request->input('name');
-        $perfil->telefono = $request->input('telefono');
-        $perfil->direccion = $request->input('direccion');
-       
-
-        $perfil->save();
-
-        // return redirect()->route('usuario.perfil');
-
-        return $id;
-    }
-
 }

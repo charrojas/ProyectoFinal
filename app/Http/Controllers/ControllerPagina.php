@@ -79,6 +79,6 @@ class ControllerPagina extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }

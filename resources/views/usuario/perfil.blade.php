@@ -60,7 +60,8 @@
                                     </div>
                                 </div>
 
-                                <!-- Botones "Mis favoritos" y "Mis vehículos" -->
+                               
+                               
                                 <div class="row">
                                     <div class="col-6">
                                         <a href="{{route('vehiculos.misFavoritos')}}" class="btn btn-mis-favoritos text-white" style="background-color: rgb(82, 151, 248);">Mis
